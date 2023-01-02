@@ -1,25 +1,43 @@
 // let avg = score / numberOfTeam;
+let dolphinsAvg, koalaAvg;
 
-
-// ======================Team's Data =============
+// ======================Dolphin Data for each three cases =============
 let dolphins = {
-   firstGame:  [ 96, 108, 89],
-    secondGame: [97, 112, 110],
-    thirdGame: [97, 112, 101]
-}
+    testCase1: [96, 108, 89],
+    testCase2: [97, 112, 110],
+    testCase3: [97, 112, 101],
+};
 
+// ======================Dolphin Data for three test cases =============
 let Koalas = {
-    firstGame:  [ 88, 91, 110],
-     secondGame: [109, 95, 123],
-     thirdGame: [109, 95, 106]
- }
+    testCase1: [88, 91, 110],
+    testCase2: [109, 95, 123],
+    testCase3: [96, 108, 89],
+};
 
-//  ===============================
-for (let i = 0; i < dolphins.length; i++) {
-    Dolphinscore = dolphins[i].reduce((prev, next) => {
-        return prev + next;
-      });
+function HighestAvg() {
+    dolphinsAvg =
+        dolphins.testCase1.reduce((prev, next) => {
+            return prev + next;
+        }) / 3;
+
+    koalaAvg =
+        dolphins.testCase1.reduce((prev, next) => {
+            return prev + next;
+        }) / 3;
+
+    if (dolphinsAvg > koalaAvg && dolphinsAvg > 100) {
+        console.log("The dolphins have won the trophy!!!");
+
+    } else if (koalaAvg > dolphinsAvg && koalaAvg > 100) {
+        console.log("The dolphins have won the trophy!!!");
+
+    } else if ((koalaAvg = dolphinsAvg && koalaAvg > 100 && dolphinsAvg > 100)) {
+        console.log("It's a Draw!!");
+        
+    } else {
+        console.log("No winner!");
+    }
 }
 
-
-console.log(score);
+HighestAvg();
